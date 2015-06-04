@@ -11,4 +11,5 @@ package autoNoleggio;
  */
 public class Restituzione {
     
+    public String modifica;
 }
