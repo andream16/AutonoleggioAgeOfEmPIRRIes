@@ -13,7 +13,6 @@ public class Prenotazione {
     public Utente idUtente;
     public Auto idAuto;
     public int idPrenotazione;
-    public boolean pagamento;
     
     
     public void setAuto(Auto auto){

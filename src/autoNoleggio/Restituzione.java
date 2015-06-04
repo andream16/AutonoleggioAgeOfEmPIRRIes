@@ -10,7 +10,6 @@ package autoNoleggio;
  * @author Alessio
  */
 public class Restituzione {
-     
     
-    public String test;
+    public String testGIt;
 }

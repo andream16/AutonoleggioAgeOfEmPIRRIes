@@ -6,6 +6,7 @@ package autoNoleggio;
  * and open the template in the editor.
  */
 
+import java.util.Iterator;
 import java.util.List;
 /**
  *
@@ -15,13 +16,21 @@ public class AutoIterator implements java.util.Iterator<AbstractAuto>{
 
     @Override
     public boolean hasNext() {
-   throw new UnsupportedOperationException("Not supported yet.");
+        if(DittaAutonoleggio.getInstance().lista.iterator().hasNext())
+        {return true;}
+                else return false;}
+   
         //if Filale.getParcoAuto().hasnext()  getParco è una lista che contiene il parco auto della filiale
-    }
+    
 
     @Override
     public AbstractAuto next() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Iterator<AbstractAuto> autoitr= DittaAutonoleggio.getInstance().lista.iterator();
+        Object element=autoitr.next();
+        if (element instanceof Auto){
+            return autoitr.next();
+        }
+        else return null;
     // return Filiale.getParcoAUto.().next()
     }
     

@@ -1,6 +1,7 @@
 package autoNoleggio;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 
@@ -16,41 +17,87 @@ import java.util.ArrayList;
  */
 public class Application {
     public static void main(String[] args){
-        Filiale filiale1= new Filiale();
-        //inserisci nome.cognome,codF,e carta di credito
-        // se utente=admin
-        filiale1.admin=new Admin("admin","admin","fsdjfj","ds");
-        // se no
-        Utente utente=new Utente("MArio","Pesce","123124124123","miao","visa");
-  //menu      
-        //vuoi visualizzare auto?
-        //si
-        //vuoi prenotare un'auto?
-        //si
-      
-        Auto auto1=new Auto("34dc","corsa",1);
-         Auto auto2=new Auto("ad123","opel",1);
         
-      
-       Auto auto3=new Auto("ab64","bmw",2);
-       Auto auto4=new Auto("ad982","mercedes",3);
-       Auto auto5=new Auto("ahg243","fiat",4);
-       
-       filiale1.admin.aggiungiAuto(auto1);
-        filiale1.admin.aggiungiAuto(auto2); 
-         filiale1.admin.aggiungiAuto(auto3);
-          filiale1.admin.aggiungiAuto(auto4);
-          filiale1.admin.aggiungiAuto(auto5);
+        ArrayList<Utente> utenti=new ArrayList<Utente>();
+        DittaAutonoleggio.getInstance().addAuto();
+        Filiale filiale=DittaAutonoleggio.getInstance().admin.aggiungiFiliale();
+        filiale.admin.addObserver(new ObserverAuto());
         
+        boolean flag = true;
         
-       System.out.println(auto1.toString());
-       Prenotazione p=new Prenotazione();
-       Prenotazione p1=new Prenotazione();
-        utente.prenota(auto1,p);
-        utente.prenota(auto2,p1);
-        utente.cancellaPrenotazione(p);
+        while (flag) {
+            
+            System.out.println("1)Benvenuto: Immetti i tuoi dati: user o admin \n");
+            String nome;
+            Scanner scan = new Scanner(System.in);
+            nome = scan.nextLine();
+
+            if (nome.equals("user")) {
+                Utente utente=new Utente("user","user","fhdhf","user@user","visa");
+                utenti.add(utente);
+                flag = true;
+                System.out.println("Cosa vuoi fare? 1) Visualizza Auto  2) Prenota auto3) Cancella prenotazione\n");
+
+                String azione;
+                Scanner scanI = new Scanner(System.in);
+                azione = scanI.nextLine();
+                  if (azione.equals("1")) {
+                     
+                    DittaAutonoleggio.getInstance().GetIterator();
+                  } else if (azione.equals("2")) {
+                    
+                  
+                        System.out.println("Quale auto vuoi prenotare? Scrivi l'indice");
+                        DittaAutonoleggio.getInstance().GetIterator();
+                        String auto;
+                        Scanner scanAuto = new Scanner(System.in);
+                        auto = scanAuto.nextLine();
+                        int indice=Integer.parseInt(auto);;
+                        indice-=1;
+                        Prenotazione p=new Prenotazione();
+                        p.idUtente=utente;
+                      
+          
+                try{
+                    utente.prenota((Auto)DittaAutonoleggio.getInstance().lista.get(indice),p,filiale);
+                } catch(Exception e){
+                    
+                    System.out.println("indice errato");}
+                   }
+            }
+            else if (nome.equals("admin")){
+            
+             System.out.println("\nCosa vuoi fare? 1) Conferma Prenotazione \n2) Cancella prenotazione \n3) Aggiungi auto  \n4) Rimuovi auto\n");
+
+             String risp;
+
+                Scanner scanRisp = new Scanner(System.in);
+                risp = scanRisp.nextLine();
+
+                if (risp.equals("1")) {
+                    int i=0;
+                    int j=0;
+                
+                    for(i=0;i<GestorePrenotazioni.listaPrenotazione.size();i++){
+                        for(j=0;j<utenti.size();j++){
+                            if (GestorePrenotazioni.listaPrenotazione.get(i).idUtente!=utenti.get(j)){
+                                j++;} i++;
+                        }}
+                    if ((GestorePrenotazioni.listaPrenotazione.get(i).idUtente==utenti.get(j))){
+                 filiale.admin.confermaPrenotazioneUtente(GestorePrenotazioni.listaPrenotazione.get(i),utenti.get(j));}
+                    else System.out.println("Utente non trovato");    
+                
+                System.out.println("Quale biglietto vuoi acquistare? 1) 90Min 2) 120Min");
+                String ticketMin;
+
+                Scanner scanTicket = new Scanner(System.in);
+                ticketMin = scanTicket.nextLine();
+                
+                }
+            }
         
-        
-    }
+        }
     
+    }
 }
+

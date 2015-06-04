@@ -17,15 +17,12 @@ public class GestorePrenotazioni {
  
     public static ArrayList<Prenotazione> listaPrenotazione=new ArrayList<Prenotazione>(); 
     
-    public static void confermaPrenotazione(Prenotazione p){
-        GestorePrenotazioni.listaPrenotazione.add(p);
-        Filiale.parcoAuto.remove(p.idAuto);
-        System.out.println(p.idAuto.toString()+" è stata rimossa");
-    p.pagamento=true;
+    public static void confermaPrenotazione(Prenotazione p,Admin a){
+    a.confermaPrenotazioneUtente(p,p.idUtente);
     }
      public static void annullaPrenotazione(Prenotazione p){
           GestorePrenotazioni.listaPrenotazione.remove(p);
-          Filiale.parcoAuto.add(p.idAuto);
-    p.pagamento=false;
+          DittaAutonoleggio.getInstance().lista.add(p.idAuto);
+    
     }
 }

@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class Filiale {
    
     public String nome;
-    public String sede;
-    public Admin admin;
-    public static ArrayList<Auto> parcoAuto = new ArrayList<Auto>();
+    public  String sede;
+    public  Admin admin;
+  
     
    
 

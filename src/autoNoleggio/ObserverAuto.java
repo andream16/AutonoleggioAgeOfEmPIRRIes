@@ -1,4 +1,5 @@
 package autoNoleggio;
+import java.util.*;
 
 
 
@@ -12,6 +13,25 @@ package autoNoleggio;
  *
  * @author Alessio
  */
-public class ObserverAuto {
+public class ObserverAuto implements Observer{
+
+    
+    ArrayList<Observer> obList=new ArrayList<Observer>();
+    @Override
+    public String toString(){
+    return "Auto";
+    }
+    @Override
+    public void update(Observable o, Object arg) {
+        
+       if(arg!=null){
+           int num=(int) arg;
+           if(num==0)
+               System.out.println("Le macchine sono terminate");
+       }
+        
+    }
+    
+    
     
 }

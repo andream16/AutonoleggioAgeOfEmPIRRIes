@@ -22,7 +22,11 @@ public class SuperAdmin extends Anagrafica{
     public Filiale deleteFiliale(){ 
         return new Filiale();
     }
-    public Filiale aggiungiFIliale(){ 
-        return new Filiale();
+    public Filiale aggiungiFiliale(){ 
+        Filiale filiale=new Filiale();
+        filiale.admin=new Admin("admin","admin","fsdjfj","ds");
+        filiale.admin.addObserver(new ObserverAuto());
+       
+        return filiale;
     }
 }
