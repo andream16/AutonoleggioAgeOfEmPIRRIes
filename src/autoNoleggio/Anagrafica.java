@@ -1,9 +1,11 @@
 package autoNoleggio;
 
+import java.util.Observable;
 
 
 
-public abstract class Anagrafica {
+
+public abstract class Anagrafica extends Observable{
     
     public String nome;
     public String cognome;

@@ -21,10 +21,10 @@ public class Utente extends Anagrafica{
         this.carta=carta;
     }
     
-    public void prenota(Auto auto,Prenotazione p){
+    public void prenota(Auto auto,Prenotazione p,Filiale f){
         p.setUtente(this);
         p.setAuto(auto);
-       Admin.confermaPrenotazioneUtente(p);
+      GestorePrenotazioni.confermaPrenotazione(p,f.admin);
     }
     public void cancellaPrenotazione(Prenotazione p){
         GestorePrenotazioni.annullaPrenotazione(p);
