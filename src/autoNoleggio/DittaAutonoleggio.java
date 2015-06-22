@@ -35,13 +35,13 @@ public class DittaAutonoleggio {
         } return ditta;
     }
     
-    public ArrayList<AbstractAuto> lista= new ArrayList<AbstractAuto>();
+    public ArrayList<AbstractAuto> lista= new ArrayList<AbstractAuto>(); //lista di auto
     
     
    
    
     
-    public void addAuto(){
+    public void addAuto(){ //auto standard nella filiale
     lista.add(auto1);
     lista.add(auto2);
     lista.add(auto3);
@@ -52,7 +52,7 @@ public class DittaAutonoleggio {
        
 
     
-    public void GetIterator(){
+    public void GetIterator(){ //scorro il parco auto
         Iterator<AbstractAuto> auto=new AutoIterator();
         auto=lista.iterator();
         int i=1;
@@ -69,7 +69,7 @@ public class DittaAutonoleggio {
     
     public String nome;
     public String sede;
-    public SuperAdmin admin=new SuperAdmin("Super","Admin","gli928znchee89354b","superadmin@admin.it");
+    public Admin admin=new Admin("admin","admin","admiin@admin.it","dmnamdn92r14t354t");
     
  
 }

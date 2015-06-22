@@ -15,11 +15,11 @@ public class Prenotazione {
     public int idPrenotazione;
     
     
-    public void setAuto(Auto auto){
+    public void setAuto(Auto auto){ //specifico quale auto è stata prenotata
         this.idAuto=auto;
     }
 
-    public void setUtente(Utente utente){
+    public void setUtente(Utente utente){ //secifico quale utente ha prenotato una determinata auto
         this.idUtente=utente;
     }
 }

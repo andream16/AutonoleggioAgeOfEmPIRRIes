@@ -15,14 +15,14 @@ import java.util.ArrayList;
  */
 public class GestorePrenotazioni {
  
-    public static ArrayList<Prenotazione> listaPrenotazione=new ArrayList<Prenotazione>(); 
+    public static ArrayList<Prenotazione> listaPrenotazione=new ArrayList<Prenotazione>(); //lista delle prenotazioni
     
-    public static void confermaPrenotazione(Prenotazione p,Admin a){
-    a.confermaPrenotazioneUtente(p,p.idUtente);
+    public static void aggiungiPrenotazione(Prenotazione p){ //aggiungo prenotazioni alla lista
+    listaPrenotazione.add(p);
     }
-     public static void annullaPrenotazione(Prenotazione p){
+     public static void annullaPrenotazione(Prenotazione p){ //rimuovo la prenotazione dalla lista
           GestorePrenotazioni.listaPrenotazione.remove(p);
-          DittaAutonoleggio.getInstance().lista.add(p.idAuto);
+          DittaAutonoleggio.getInstance().lista.add(p.idAuto); //aggiungo di nuovo l'auto alla lista
     
     }
 }

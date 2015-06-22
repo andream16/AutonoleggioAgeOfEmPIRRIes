@@ -20,12 +20,12 @@ public class Admin extends Anagrafica{
         super(nome,cognome,email, codiceFiscale);
     }
     
-    public void aggiungiAuto (Auto auto){
+    public void aggiungiAuto (Auto auto){ //aggiungo auto al parco auto
         DittaAutonoleggio.getInstance().lista.add(auto);
       
     }
         
-    public AbstractAuto rimuoviAuto(Auto auto){
+    public AbstractAuto rimuoviAuto(Auto auto){ //rimuovo auto dal parco auto
     try{
         Auto index=auto;
         int i=0;
@@ -37,7 +37,7 @@ public class Admin extends Anagrafica{
             
                     AbstractAuto auto1=DittaAutonoleggio.getInstance().lista.get(i);
                     DittaAutonoleggio.getInstance().lista.remove(auto1);
-                    setChanged();
+                    setChanged(); //notifico lo stato del parco auto e nel caso stampo un messaggio
     
                     notifyObservers(DittaAutonoleggio.getInstance().lista.size());
        
@@ -51,19 +51,18 @@ public class Admin extends Anagrafica{
    
             }
     }
-    public  void confermaPrenotazioneUtente(Prenotazione p,Utente u){
-        
-        if (u.carta!=null){
-        
-            GestorePrenotazioni.listaPrenotazione.add(p);
-            rimuoviAuto(p.idAuto);
-            System.out.println(p.idAuto.toString()+" è stata rimossa");
-
-        } else System.out.println("Impossibile effettuare il pagamento"); 
+     public Filiale deleteFiliale(){ //elimino filiale
+        return new Filiale();
     } 
+    public Filiale aggiungiFiliale(){ //aggiungo filiale
+        Filiale filiale=new Filiale();
+        filiale.admin=new Admin("admin","admin","fsdjfj","ds");
+        filiale.admin.addObserver(new ObserverAuto()); 
+       
+        return filiale;}
     
     
-    public void rimuoviUtente(){
+    public void rimuoviUtente(){ //rimuove l'utente dalla lista di utenti
     
     };
     
