@@ -85,6 +85,7 @@ public class Application {
                 }
                 
                 if (risp.equals("2")) {  //rimuovo l'auto selezionata
+                    
                System.out.println("Quale auto vuoi rimuovere? Scrivi l'indice");
                         DittaAutonoleggio.getInstance().GetIterator();
                         String auto;
