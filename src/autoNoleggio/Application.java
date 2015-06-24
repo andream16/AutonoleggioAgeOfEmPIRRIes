@@ -20,7 +20,7 @@ public class Application {
         
         ArrayList<Utente> utenti=new ArrayList<Utente>(); //lista di utenti registrati
         
-        Filiale filiale=DittaAutonoleggio.getInstance().admin.aggiungiFiliale(); //filiale di riferimento//
+        Filiale filiale=GestoreFiliali.aggiungiFiliale(); //filiale di riferimento
         DittaAutonoleggio.getInstance().parco.addAuto(); //inizializzo parco auto
       
         

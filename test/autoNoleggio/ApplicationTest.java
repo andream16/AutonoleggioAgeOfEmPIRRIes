@@ -18,7 +18,7 @@ public class ApplicationTest {
     
     public ApplicationTest() {
     }
-    Filiale filiale=DittaAutonoleggio.getInstance().admin.aggiungiFiliale();
+    Filiale filiale=GestoreFiliali.aggiungiFiliale();
        Auto auto= new Auto("dad","zonda",1);
        Prenotazione p=new Prenotazione();
     

@@ -23,15 +23,7 @@ public class Admin extends Anagrafica{
     
         
     
-     public Filiale deleteFiliale(){ //elimino filiale
-        return new Filiale();
-    } 
-    public Filiale aggiungiFiliale(){ //aggiungo filiale
-        Filiale filiale=new Filiale();
-        filiale.admin=new Admin("admin","admin","fsdjfj","ds");
-        
-       
-        return filiale;}
+    
     
     
     public void rimuoviUtente(){ //rimuove l'utente dalla lista di utenti

@@ -18,6 +18,7 @@ public class DittaAutonoleggio {
     private static DittaAutonoleggio ditta;
     
       ParcoAuto parco=new ParcoAuto(); //creo il parco auto
+      
        
     private DittaAutonoleggio(){
         
@@ -60,6 +61,7 @@ public class DittaAutonoleggio {
     public String nome;
     public String sede;
     public Admin admin=new Admin("admin","admin","admiin@admin.it","dmnamdn92r14t354t");
-    
+
+
  
 }
