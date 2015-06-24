@@ -21,9 +21,8 @@ public class Application {
         ArrayList<Utente> utenti=new ArrayList<Utente>(); //lista di utenti registrati
         
         Filiale filiale=DittaAutonoleggio.getInstance().admin.aggiungiFiliale(); //filiale di riferimento//
-        
-        DittaAutonoleggio.getInstance().addAuto(); //inizializzazione parco auto//
-        
+        DittaAutonoleggio.getInstance().parco.addAuto(); //inizializzo parco auto
+      
         
         boolean flag = true;
         
@@ -38,7 +37,7 @@ public class Application {
                 Utente utente=new Utente("user","user","fhdhf","user@user","visa");
                 utenti.add(utente); //aggiunta dell'utente nella lista di utenti
                 flag = true;
-                System.out.println("Cosa vuoi fare? 1) Visualizza Auto  2) Prenota auto3) Cancella prenotazione\n");
+                System.out.println("Cosa vuoi fare?\n1) Visualizza Auto\n2) Prenota auto\n3) Cancella prenotazione\n");
 
                 String azione;
                 Scanner scanI = new Scanner(System.in);
@@ -63,22 +62,26 @@ public class Application {
                       
           
                 try{ //provo a rimuovere un'auto dal parco dopo aver richiesto la prenotazione
-                    utente.prenota((Auto)DittaAutonoleggio.getInstance().lista.get(indice),p,filiale);
+                    GestorePrenotazioni.prenota((Auto)DittaAutonoleggio.getInstance().getLista().get(indice),utenti.get(0),filiale);
+
                 } catch(Exception e){
                     
                     System.out.println("indice errato");}
                    }
+                  else if (azione.equals("3")) {
+                      GestorePrenotazioni.annullaPrenotazione(GestorePrenotazioni.listaPrenotazione.get(GestorePrenotazioni.listaPrenotazione.size()-1)); // cancello prenotazione esistente e aggiungo l'auto dinuovo disponibile al parco
+                  }
             }
             else if (nome.equals("admin")){
             
-             System.out.println("\n1)Aggiungi auto  \n2) Rimuovi auto\n");
+             System.out.println("\n1)Aggiungi auto\n2) Rimuovi auto\n");
 
              String risp;
 
                 Scanner scanRisp = new Scanner(System.in);
                 risp = scanRisp.nextLine();
 
-                if (risp.equals("1")) { //aggiungo auto al parco auto
+                if (risp.equals("1")) { //aggiungo un'auto al parco auto
                
                     DittaAutonoleggio.getInstance().admin.aggiungiAuto(new Auto("1eu2","corsa",2));
                
@@ -93,7 +96,7 @@ public class Application {
                         auto = scanAuto.nextLine();
                         int indice=Integer.parseInt(auto);;
                         indice-=1;
-                    DittaAutonoleggio.getInstance().admin.rimuoviAuto((Auto)DittaAutonoleggio.getInstance().lista.get(indice));
+                    DittaAutonoleggio.getInstance().admin.rimuoviAuto((Auto)DittaAutonoleggio.getInstance().getLista().get(indice)); // rimuovo auto selezionata dal parco auto
                flag=false;
                 }
                 

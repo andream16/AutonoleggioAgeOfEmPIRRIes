@@ -18,7 +18,6 @@ public class Filiale {
     public  String sede;
     public  Admin admin;
   
-    
     } 
    
 

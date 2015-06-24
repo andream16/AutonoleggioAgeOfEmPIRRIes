@@ -21,12 +21,9 @@ public class Utente extends Anagrafica{
         this.carta=carta;
     }
     
-    public void prenota(Auto auto,Prenotazione p,Filiale f){ //prenota una determinata auto in una filiale
-        p.setUtente(this);
-        p.setAuto(auto);
-        f.admin.rimuoviAuto(auto);
+    
       
-    }
+    
     public void cancellaPrenotazione(Prenotazione p){ //annulla la prenotazione effettuata in precedenza
         GestorePrenotazioni.annullaPrenotazione(p);
     }

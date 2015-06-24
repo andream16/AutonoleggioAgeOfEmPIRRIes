@@ -16,7 +16,7 @@ public class AutoIterator implements java.util.Iterator<AbstractAuto>{
 
     @Override
     public boolean hasNext() {
-        if(DittaAutonoleggio.getInstance().lista.iterator().hasNext())
+        if(DittaAutonoleggio.getInstance().getLista().iterator().hasNext())
         {return true;}
                 else return false;}
    
@@ -25,7 +25,7 @@ public class AutoIterator implements java.util.Iterator<AbstractAuto>{
 
     @Override
     public AbstractAuto next() {
-        Iterator<AbstractAuto> autoitr= DittaAutonoleggio.getInstance().lista.iterator();
+        Iterator<AbstractAuto> autoitr= DittaAutonoleggio.getInstance().getLista().iterator();
         Object element=autoitr.next();
         if (element instanceof Auto){
             return autoitr.next();

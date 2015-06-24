@@ -30,7 +30,7 @@ public class ApplicationTest {
     public void testAggiuntaAuto() {
        
        filiale.admin.aggiungiAuto(auto);
-       Assert.assertEquals(1, DittaAutonoleggio.getInstance().lista.size());
+       Assert.assertEquals(1, DittaAutonoleggio.getInstance().getLista().size());
        
        
     }
@@ -43,9 +43,9 @@ public class ApplicationTest {
     
     
     Utente utente=new Utente("mario","rossi","mario@rossi","fjsfjsd2r39r","visa");
-    utente.prenota(auto, p, filiale);
+  GestorePrenotazioni.prenota(auto, utente, filiale);
     
-   Assert.assertEquals(0, DittaAutonoleggio.getInstance().lista.size());
+   Assert.assertEquals(0, DittaAutonoleggio.getInstance().getLista().size());
     
     
         

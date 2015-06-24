@@ -17,13 +17,7 @@ import java.util.*;
 public class DittaAutonoleggio {
     private static DittaAutonoleggio ditta;
     
-        Auto auto1=new Auto("34dc","corsa",1);
-         Auto auto2=new Auto("ad123","206",5);
-        
-      
-       Auto auto3=new Auto("ab64","320d",2);
-       Auto auto4=new Auto("ad982","classe a",3);
-       Auto auto5=new Auto("ahg243","stilo",4);
+      ParcoAuto parco=new ParcoAuto(); //creo il parco auto
        
     private DittaAutonoleggio(){
         
@@ -35,26 +29,22 @@ public class DittaAutonoleggio {
         } return ditta;
     }
     
-    public ArrayList<AbstractAuto> lista= new ArrayList<AbstractAuto>(); //lista di auto
+    //lista di auto
     
     
    
    
     
-    public void addAuto(){ //auto standard nella filiale
-    lista.add(auto1);
-    lista.add(auto2);
-    lista.add(auto3);
-    lista.add(auto4);
-    lista.add(auto5);
-    
+    public  ArrayList<AbstractAuto> getLista(){ //passo il parco auto a chi lo richiede
+     
+    return parco.lista;
     }
        
 
     
     public void GetIterator(){ //scorro il parco auto
         Iterator<AbstractAuto> auto=new AutoIterator();
-        auto=lista.iterator();
+        auto=parco.lista.iterator();
         int i=1;
         while(auto.hasNext())
         {

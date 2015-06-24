@@ -21,7 +21,7 @@ public class Admin extends Anagrafica{
     }
     
     public void aggiungiAuto (Auto auto){ //aggiungo auto al parco auto
-        DittaAutonoleggio.getInstance().lista.add(auto);
+        DittaAutonoleggio.getInstance().getLista().add(auto);
       
     }
         
@@ -30,16 +30,16 @@ public class Admin extends Anagrafica{
         Auto index=auto;
         int i=0;
         
-            while(index!=DittaAutonoleggio.getInstance().lista.get(i)){
+            while(index!=DittaAutonoleggio.getInstance().getLista().get(i)){
                 
                 i++;
             }
             
-                    AbstractAuto auto1=DittaAutonoleggio.getInstance().lista.get(i);
-                    DittaAutonoleggio.getInstance().lista.remove(auto1);
+                    AbstractAuto auto1=DittaAutonoleggio.getInstance().getLista().get(i);
+                    DittaAutonoleggio.getInstance().getLista().remove(auto1);
                     setChanged(); //notifico lo stato del parco auto e nel caso stampo un messaggio
     
-                    notifyObservers(DittaAutonoleggio.getInstance().lista.size());
+                    notifyObservers(DittaAutonoleggio.getInstance().getLista().size());
        
      return index;
      
