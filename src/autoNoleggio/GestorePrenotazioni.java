@@ -23,7 +23,7 @@ public class GestorePrenotazioni {
         p.setUtente(u);
         p.setAuto(auto);
         aggiungiPrenotazione(p); // aggiungo la prenotazione alla lista
-        f.admin.rimuoviAuto(auto);} // rimuovo l'auto dal parco auto
+        DittaAutonoleggio.getInstance().parco.rimuoviAuto(auto);} // rimuovo l'auto dal parco auto
     
     public static void aggiungiPrenotazione(Prenotazione p){ //aggiungo prenotazioni alla lista
     listaPrenotazione.add(p);

@@ -83,7 +83,7 @@ public class Application {
 
                 if (risp.equals("1")) { //aggiungo un'auto al parco auto
                
-                    DittaAutonoleggio.getInstance().admin.aggiungiAuto(new Auto("1eu2","corsa",2));
+                    DittaAutonoleggio.getInstance().parco.aggiungiAuto(new Auto("1eu2","corsa",2));
                
                 }
                 
@@ -96,7 +96,7 @@ public class Application {
                         auto = scanAuto.nextLine();
                         int indice=Integer.parseInt(auto);;
                         indice-=1;
-                    DittaAutonoleggio.getInstance().admin.rimuoviAuto((Auto)DittaAutonoleggio.getInstance().getLista().get(indice)); // rimuovo auto selezionata dal parco auto
+                    DittaAutonoleggio.getInstance().parco.rimuoviAuto((Auto)DittaAutonoleggio.getInstance().getLista().get(indice)); // rimuovo auto selezionata dal parco auto
                flag=false;
                 }
                 

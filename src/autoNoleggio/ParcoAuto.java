@@ -5,14 +5,14 @@
  */
 package autoNoleggio;
 
-
+import java.util.Observable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Alessio
  */
-public class ParcoAuto {
+public class ParcoAuto extends Observable{
     
       Auto auto1=new Auto("34dc","corsa",1);
          Auto auto2=new Auto("ad123","206",5);
@@ -32,5 +32,34 @@ public class ParcoAuto {
             lista.add(auto5);
         }
         
+    public void aggiungiAuto (Auto auto){ //aggiungo auto al parco auto
+        lista.add(auto);
+      
+    }
+    public AbstractAuto rimuoviAuto(Auto auto){ //rimuovo auto dal parco auto
+    try{
+        Auto index=auto;
+        int i=0;
+        
+            while(index!=DittaAutonoleggio.getInstance().getLista().get(i)){
+                
+                i++;
+            }
+            
+                    AbstractAuto auto1=DittaAutonoleggio.getInstance().getLista().get(i);
+                    DittaAutonoleggio.getInstance().getLista().remove(auto1);
+                    setChanged(); //notifico lo stato del parco auto e nel caso stampo un messaggio
     
+                    notifyObservers(DittaAutonoleggio.getInstance().getLista().size());
+       
+     return index;
+     
+    } catch (Exception e){
+        
+                System.out.println("Le macchine sono state tutte prenotate");
+                
+            return null;
+   
+            }
+    }
 }

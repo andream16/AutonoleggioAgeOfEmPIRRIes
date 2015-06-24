@@ -29,7 +29,7 @@ public class ApplicationTest {
     @Test
     public void testAggiuntaAuto() {
        
-       filiale.admin.aggiungiAuto(auto);
+       DittaAutonoleggio.getInstance().parco.aggiungiAuto(auto);
        Assert.assertEquals(1, DittaAutonoleggio.getInstance().getLista().size());
        
        
