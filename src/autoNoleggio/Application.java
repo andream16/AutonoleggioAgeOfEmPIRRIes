@@ -47,8 +47,9 @@ public class Application {
                     DittaAutonoleggio.getInstance().IteratorParcoAuto();
                   } else if (azione.equals("2")) {
                     
-                  
-                        System.out.println("Quale auto vuoi prenotare? Scrivi l'indice");
+                   if (DittaAutonoleggio.getInstance().getLista().isEmpty()){System.out.println("auto terminate impossibile effettuare la prenotazione");}// controllo se il parco auto ha auto disponibili 
+                   else
+                   {System.out.println("Quale auto vuoi prenotare? Scrivi l'indice");
                         DittaAutonoleggio.getInstance().IteratorParcoAuto(); /*stampo il parco auto per far decidere all'utente 
                         quale auto prenotare*/
                         String auto;
@@ -62,12 +63,13 @@ public class Application {
                       
           
                 try{ //provo a rimuovere un'auto dal parco dopo aver richiesto la prenotazione
+                   
                     GestorePrenotazioni.prenota((Auto)DittaAutonoleggio.getInstance().getLista().get(indice),utenti.get(0),filiale);
 
                 } catch(Exception e){
                     
                     System.out.println("indice errato");}
-                   }
+                   }}
                   else if (azione.equals("3")) {
                       GestorePrenotazioni.annullaPrenotazione(GestorePrenotazioni.listaPrenotazione.get(GestorePrenotazioni.listaPrenotazione.size()-1)); // cancello prenotazione esistente e aggiungo l'auto dinuovo disponibile al parco
                   }
