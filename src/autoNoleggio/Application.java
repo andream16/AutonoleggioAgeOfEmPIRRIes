@@ -63,8 +63,9 @@ public class Application {
                       
           
                 try{ //provo a rimuovere un'auto dal parco dopo aver richiesto la prenotazione
-                   
-                    GestorePrenotazioni.prenota((Auto)DittaAutonoleggio.getInstance().getLista().get(indice),utenti.get(0),filiale);
+                   Auto auto1=(Auto)DittaAutonoleggio.getInstance().getLista().get(indice);
+                    GestorePrenotazioni.prenota(auto1,utenti.get(0),filiale);
+                    System.out.println("Prenotazione "+auto1.modello+" effettuata");
 
                 } catch(Exception e){
                     
