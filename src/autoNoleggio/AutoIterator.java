@@ -7,7 +7,6 @@ package autoNoleggio;
  */
 
 import java.util.Iterator;
-import java.util.List;
 /**
  *
  * @author Alessio
@@ -33,6 +32,11 @@ public class AutoIterator implements java.util.Iterator<AbstractAuto>{
         else return null;
     // return Filiale.getParcoAUto.().next()
     }
+    @Override
+    public void remove(){
+    
+}
+    
     
     
    

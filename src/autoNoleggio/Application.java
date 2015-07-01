@@ -44,12 +44,12 @@ public class Application {
                 azione = scanI.nextLine();
                   if (azione.equals("1")) { //stampo a video il parco auto
                      
-                    DittaAutonoleggio.getInstance().GetIterator();
+                    DittaAutonoleggio.getInstance().IteratorParcoAuto();
                   } else if (azione.equals("2")) {
                     
                   
                         System.out.println("Quale auto vuoi prenotare? Scrivi l'indice");
-                        DittaAutonoleggio.getInstance().GetIterator(); /*stampo il parco auto per far decidere all'utente 
+                        DittaAutonoleggio.getInstance().IteratorParcoAuto(); /*stampo il parco auto per far decidere all'utente 
                         quale auto prenotare*/
                         String auto;
                         Scanner scanAuto = new Scanner(System.in);
@@ -90,7 +90,7 @@ public class Application {
                 if (risp.equals("2")) {  //rimuovo l'auto selezionata
                     
                System.out.println("Quale auto vuoi rimuovere? Scrivi l'indice");
-                        DittaAutonoleggio.getInstance().GetIterator();
+                        DittaAutonoleggio.getInstance().IteratorParcoAuto();
                         String auto;
                         Scanner scanAuto = new Scanner(System.in);
                         auto = scanAuto.nextLine();

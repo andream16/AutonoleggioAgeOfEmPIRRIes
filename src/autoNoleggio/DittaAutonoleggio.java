@@ -43,7 +43,7 @@ public class DittaAutonoleggio {
        
 
     
-    public void GetIterator(){ //scorro il parco auto
+    public void IteratorParcoAuto(){ //scorro il parco auto
         Iterator<AbstractAuto> auto=new AutoIterator();
         auto=parco.lista.iterator();
         int i=1;
