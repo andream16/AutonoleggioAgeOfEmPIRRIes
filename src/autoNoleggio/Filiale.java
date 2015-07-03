@@ -17,7 +17,14 @@ public class Filiale {
     public String nome;
     public  String sede;
     public  Admin admin;
+    
+    public Filiale(String nome, String sede,Admin admin){
+      
+        this.nome=nome;
+      this.sede=sede;
+      this.admin=admin;
   
+  }
     } 
    
 

@@ -18,7 +18,7 @@ public class ApplicationTest {
     
     public ApplicationTest() {
     }
-    Filiale filiale=GestoreFiliali.aggiungiFiliale();
+    Filiale filiale=GestoreFiliali.aggiungiFiliale("AutoZoo","genova",new Admin("Rodrigo","Taddei","rodrigo@taddei","tddrdg29slfo"));
        Auto auto= new Auto("dad","zonda",1);
        Prenotazione p=new Prenotazione();
     

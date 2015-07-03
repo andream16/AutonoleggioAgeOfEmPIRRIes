@@ -20,7 +20,7 @@ public class Application {
         
         ArrayList<Utente> utenti=new ArrayList<Utente>(); //lista di utenti registrati
         
-        Filiale filiale=GestoreFiliali.aggiungiFiliale(); //filiale di riferimento
+        Filiale filiale=GestoreFiliali.aggiungiFiliale("AutoMotors","cagliari",new Admin("Carlo","Conti","carlo@conti","cntcrlfsf30")); //filiale di riferimento
         DittaAutonoleggio.getInstance().parco.addAuto(); //inizializzo parco auto
       
         
@@ -55,7 +55,7 @@ public class Application {
                         String auto;
                         Scanner scanAuto = new Scanner(System.in);
                         auto = scanAuto.nextLine();
-                        int indice=Integer.parseInt(auto);;
+                        int indice=Integer.parseInt(auto);
                         indice-=1;
                         Prenotazione p=new Prenotazione();
                         p.idUtente=utente; // setto l'utente come quello che ha prenotato una determinata auto
@@ -97,7 +97,7 @@ public class Application {
                         String auto;
                         Scanner scanAuto = new Scanner(System.in);
                         auto = scanAuto.nextLine();
-                        int indice=Integer.parseInt(auto);;
+                        int indice=Integer.parseInt(auto);
                         indice-=1;
                     DittaAutonoleggio.getInstance().parco.rimuoviAuto((Auto)DittaAutonoleggio.getInstance().getLista().get(indice)); // rimuovo auto selezionata dal parco auto
                flag=false;
